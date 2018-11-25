@@ -4,12 +4,6 @@ FROM  alpine:latest
 
 MAINTAINER  Author Name <ccancellieri@hotmail.com>
 
-RUN apt-get -y update
-RUN apt-get -y install npm maven
-
-ENV JAVA_VER 8
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/
-
 RUN apk update
 
 ENV JAVA_VERSION=8 \
@@ -39,5 +33,7 @@ RUN apk add --no-cache --virtual=build-dependencies wget ca-certificates unzip &
     javac Main.java && \
     java Main && \
     rm -r "/tmp/"*
+
+RUN apk add npm maven
 
 #RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle/" >> ~/.bashrc
