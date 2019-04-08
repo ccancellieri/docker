@@ -14,6 +14,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle/
 RUN apt-get update
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y debconf-utils
+RUN apt-get install -y openssh-client
 RUN add-apt-repository ppa:webupd8team/java -y
 RUN apt-get update
 RUN echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
